@@ -17,3 +17,7 @@ chmod +x nethunter-tools.sh
 ## Execute tool
 ```shell
 sudo bash nethunter-tools.sh
+
+-----------------------------------------------------------------------------------------------------
+# ⚠️🚧! THIS IS FOR STRICTLY EDUCATIONAL PURPOSES, I AM NOT RESPONSIBLE FOR YOUR USE OF THIS !🚧⚠️
+------------------------------------------------------------------------------------------------------
