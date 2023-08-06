@@ -69,8 +69,6 @@ check_and_install_Netdiscover
 
 #---------------------------------Next---Tool-------------------------------------------------
 
-#---------------------------------Next---Tool-------------------------------------------------
-
 
 function check_and_install_Fluxion() {
     local tool_name="fluxion"
@@ -86,8 +84,8 @@ function check_and_install_Fluxion() {
     else
         echo "Installing $tool_name..."
         git clone https://www.github.com/FluxionNetwork/fluxion.git "$script_dir/fluxion" &>/dev/null
-        sudo apt-get update
-        sudo apt-get install -y isc-dhcp-server hostapd lighttpd php-cgi
+        sudo apt-get update &>/dev/null
+        sudo apt-get install -y isc-dhcp-server hostapd lighttpd php-cgi &>/dev/null
         cd "$script_dir/fluxion/"
         sudo chmod +x fluxion.sh
         alias fluxion='sudo fluxion'
