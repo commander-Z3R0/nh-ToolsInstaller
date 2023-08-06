@@ -30,6 +30,7 @@ function check_and_install_Blackbird_venv() {
         git clone https://github.com/command-Z3R0/Blackbird-venv.git &>/dev/null
         cd Blackbird-venv &>/dev/null
         chmod +x Blackbird-venv.sh &>/dev/null
+	sudo rm -f /usr/local/bin/"$tool_name"
         sudo ln -s "$PWD/Blackbird-venv.sh" /usr/local/bin/"$tool_name" &>/dev/null
         echo " ------> $tool_name is available, run it by typing: $tool_name "
     fi
