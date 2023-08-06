@@ -5,7 +5,7 @@
 
 This script was created in order to facilitate the installation of kali nethunter compatible tools (Rootless,Lite,Rooted). Each update will bring improvements, more tools and bug fixes.
 
-#### Clone the repository
+## Clone the repository
 ```shell
 git clone https://github.com/command-Z3R0/Nethunter-tools.git
 cd Nethunter-tools
