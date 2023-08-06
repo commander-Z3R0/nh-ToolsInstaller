@@ -22,11 +22,6 @@ echo "Checking and Installing Tools!"
 
 function check_and_install_Blackbird_venv() {
     local tool_name="Blackbird-venv"
-	
-	if [ "$EUID" -ne 0 ]; then
-        echo "Please run this script with sudo: sudo $0"
-        exit 1
-    fi
 
     if command -v "$tool_name" &>/dev/null; then
         echo "The Tool $tool_name is already installed."
