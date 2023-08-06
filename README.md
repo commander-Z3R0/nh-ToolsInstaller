@@ -20,5 +20,5 @@ sudo bash nethunter-tools.sh
 ```
 
 -----------------------------------------------------------------------------------------------------
-### ⚠️🚧! THIS IS FOR STRICTLY EDUCATIONAL PURPOSES, I AM NOT RESPONSIBLE FOR YOUR USE OF THIS !🚧⚠️
+#### ⚠️🚧! THIS IS FOR STRICTLY EDUCATIONAL PURPOSES, I AM NOT RESPONSIBLE FOR YOUR USE OF THIS !🚧⚠️
 ------------------------------------------------------------------------------------------------------
