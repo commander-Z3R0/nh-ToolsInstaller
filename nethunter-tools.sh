@@ -42,7 +42,7 @@ check_and_install_Blackbird_venv
 #---------------------------------Next---Tool-------------------------------------------------
 
 function check_and_install_Netdiscover() {
-    local tool_name="netdiscover"
+    local tool_name="Netdiscover"
 	if [ "$EUID" -ne 0 ]; then
         echo "Please run this script with sudo: sudo $0"
         exit 1
@@ -67,7 +67,7 @@ check_and_install_Netdiscover
 
 
 function check_and_install_Fluxion() {
-    local tool_name="fluxion"
+    local tool_name="Fluxion"
     local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del directorio donde se encuentra este scr>
 
     if [ "$EUID" -ne 0 ]; then
@@ -98,7 +98,7 @@ check_and_install_Fluxion
 
 
 function check_and_install_Eviltrust() {
-    local tool_name="eviltrust"
+    local tool_name="Eviltrust"
     local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
 	
 	if [ "$EUID" -ne 0 ]; then
@@ -126,7 +126,7 @@ check_and_install_Eviltrust
 #---------------------------------Next---Tool-------------------------------------------------
 
 function check_and_install_ExploitDB() {
-    local tool_name="exploitdb"
+    local tool_name="ExploitDB"
 
     if [ "$EUID" -ne 0 ]; then
         echo "Please run this script with sudo: sudo $0"
