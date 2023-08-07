@@ -14,7 +14,7 @@ echo "          \ _ /        |  > Kodiac           (C2)            |           "
 echo "         _/   \_       |  > Fluxion          (WiFi)          |           "             
 echo "        / _/|\_ \      |  > EvilTrust        (WiFi)          |           "
 echo "         /  |  \       |  > ExploitDB        (Exploit)       |           "
-echo "          / v \        |  > AnonSurf         (Privacy)       |           "
+echo "          / v \        |  > Kali Whoami      (Privacy)       |           "
 echo "                       v                                     |           "
 echo "                       ---------------------------------------           " 
 
@@ -148,8 +148,8 @@ check_and_install_ExploitDB
 
 #---------------------------------Next---Tool-------------------------------------------------
 
-function check_and_install_AnonSurf() {
-    local tool_name="anonsurf"
+function check_and_install_Kali_Whoami() {
+    local tool_name="Kali-Whoami"
     
 	if [ "$EUID" -ne 0 ]; then
         echo "Please run this script with sudo: sudo $0"
@@ -161,15 +161,16 @@ function check_and_install_AnonSurf() {
         echo "The Tool $tool_name is already installed."
     else
         echo "Installing $tool_name..."
-        git clone https://github.com/Und3rf10w/kali-anonsurf.git &>/dev/null
-        cd kali-anonsurf/
-        sudo ./installer.sh &>/dev/null
+		sudo apt install tar tor curl python3 python3-scapy network-manager &>/dev/null
+        git clone https://github.com/omer-dogan/kali-whoami &>/dev/null
+        cd kali-whoami/
+        sudo make install &>/dev/null
         echo " ------> $tool_name is available, run it by typing: $tool_name "
     fi
 }
 
 # Uso de la función
-check_and_install_AnonSurf
+check_and_install_Kali_Whoami
 
 #---------------------------------Next---Tool-------------------------------------------------
                
