@@ -161,7 +161,7 @@ function check_and_install_Kali_Whoami() {
         echo "The Tool $tool_name is already installed."
     else
         echo "Installing $tool_name..."
-		sudo apt install tar tor curl python3 python3-scapy network-manager &>/dev/null
+	sudo apt install tar tor curl python3 python3-scapy network-manager -y &>/dev/null
         git clone https://github.com/omer-dogan/kali-whoami &>/dev/null
         cd kali-whoami/
         sudo make install &>/dev/null
