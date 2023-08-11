@@ -15,7 +15,6 @@ echo "         _/   \_       |  > Fluxion          (WiFi)          |            
 echo "        / _/|\_ \      |  > EvilTrust        (WiFi)          |                              |"
 echo "         /  |  \       |  > ExploitDB        (Exploit)       |                              |"
 echo "          / v \        |  > Kali Whoami      (Privacy)       |                              |" 
-echo "                       |                                     |                              |"
 echo "                       --------------------------------------------------------------------- " 
 
 echo "Checking and Installing Tools!"
