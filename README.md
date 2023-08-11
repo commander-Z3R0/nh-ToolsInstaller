@@ -19,7 +19,6 @@ This script was created in order to facilitate the installation of kali nethunte
 |  > EvilTrust        (WiFi)          |                              |
 |  > ExploitDB        (Exploit)       |                              |
 |  > Kali Whoami      (Privacy)       |                              | 
-|                                     |                              |
 ----------------------------------------------------------------------
 ```
 
