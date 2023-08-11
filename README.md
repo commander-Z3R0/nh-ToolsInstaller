@@ -7,6 +7,23 @@ This script was created in order to facilitate the installation of kali nethunte
 
 ![image](https://raw.githubusercontent.com/command-Z3R0/Nethunter-tools/main/Nethunter-tools.png)
 
+---------------------------------------------------
+
+## List of tools:
+```shell
+|--------------------------------------------------------------------| 
+|  > Blackbird-venv   (Osint)         |  > Ettercap    (MITM)        |
+|  > Netdiscover      (Scanner)       |  > Autopsy     (Forensic)    |
+|  > Kodiac           (C2)            |                              |
+|  > Fluxion          (WiFi)          |                              |             
+|  > EvilTrust        (WiFi)          |                              |
+|  > ExploitDB        (Exploit)       |                              |
+|  > Kali Whoami      (Privacy)       |                              | 
+|                                     |                              |
+----------------------------------------------------------------------
+```
+
+
 
 ## Clone the repository
 ```shell
