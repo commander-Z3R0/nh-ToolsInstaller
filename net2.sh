@@ -52,16 +52,6 @@ function install_tool() {
 
 echo "Checking and Installing Tools!"
 
-while true; do
-    display_menu
-    echo -n "Enter the number of the tool you want to install (0 to exit): "
-    read choice
-    install_tool "$choice"
-    echo "Press Enter to continue..."
-    read
-done
-
-
 function check_and_install_Blackbird_venv() {
     local tool_name="Blackbird-venv"
 
@@ -264,3 +254,11 @@ check_and_install_autopsy
 
 #---------------------------------Next---Tool-------------------------------------------------
 
+while true; do
+    display_menu
+    echo -n "Enter the number of the tool you want to install (0 to exit): "
+    read choice
+    install_tool "$choice"
+    echo "Press Enter to continue..."
+    read
+done
