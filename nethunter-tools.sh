@@ -1,36 +1,5 @@
 #!/bin/bash
 
-function display_menu() {
-    echo "==============================="
-    echo "           Menu"
-    echo "==============================="
-    echo "1. Install Blackbird-venv"
-    echo "2. Install Netdiscover"
-    echo "3. Install Fluxion"
-    echo "4. Install Eviltrust"
-    echo "5. Install ExploitDB"
-    echo "6. Install Kali Whoami"
-    echo "7. Install Ettercap"
-    echo "8. Install Autopsy"
-    echo "0. Exit"
-    echo "==============================="
-}
-
-function install_tool() {
-    case $1 in
-        1) check_and_install_Blackbird_venv ;;
-        2) check_and_install_Netdiscover ;;
-        3) check_and_install_Fluxion ;;
-        4) check_and_install_Eviltrust ;;
-        5) check_and_install_ExploitDB ;;
-        6) check_and_install_Kali_Whoami ;;
-        7) check_and_install_ettercap ;;
-        8) check_and_install_autopsy ;;
-        0) echo "Exiting..." && exit ;;
-        *) echo "Invalid option" ;;
-    esac
-}
-
 echo "                                                                                             "
 echo "                                                                                             "
 echo "      _/|   Z   |\_    (~~~~~~~~~~~~~~~~~(                                                   "
@@ -50,15 +19,6 @@ echo "          / v \        |  > Kali Whoami      (Privacy)       |            
 echo "                       --------------------------------------------------------------------- " 
 
 echo "Checking and Installing Tools!"
-
-while true; do
-    display_menu
-    echo -n "Enter the number of the tool you want to install (0 to exit): "
-    read choice
-    install_tool "$choice"
-    echo "Press Enter to continue..."
-    read
-done
 
 function check_and_install_Blackbird_venv() {
     local tool_name="Blackbird-venv"
