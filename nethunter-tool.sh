@@ -73,7 +73,7 @@ select opt in "${opciones[@]}"; do
 				check_and_install_Netdiscover
 				;;
 			"kodiac")
-				 function check_and_install_Kodiak() {
+				 function check_and_install_Kodiac() {
 					local tool_name="kodiac"
 					if [ "$EUID" -ne 0 ]; then
 						echo "Please run this script with Privileges: sudo $0"
