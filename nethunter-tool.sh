@@ -23,7 +23,7 @@ echo "Checking and Installing Tools!"
 # Menú para elegir la herramienta a instalar
 PS3="Selecciona una herramienta para instalar: "
 
-opciones=("Blackbird-venv" "Netdiscover" "Fluxion" "EvilTrust" "ExploitDB" "Kali Whoami" "Ettercap" "Autopsy" "Salir")
+opciones=("Blackbird-venv" "Kodiac" "Netdiscover" "Fluxion" "EvilTrust" "ExploitDB" "Kali Whoami" "Ettercap" "Autopsy" "Exit")
 
 select opt in "${opciones[@]}"; do
 		case $opt in
@@ -74,7 +74,7 @@ select opt in "${opciones[@]}"; do
 				;;
 			"kodiac")
 				 function check_and_install_Kodiak() {
-						local tool_name="netdiscover"
+						local tool_name="kodiac"
 						if [ "$EUID" -ne 0 ]; then
 							echo "Please run this script with Privileges: sudo $0"
 							exit 1
