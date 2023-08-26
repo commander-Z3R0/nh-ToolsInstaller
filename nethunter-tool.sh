@@ -91,7 +91,7 @@ select opt in "${opciones[@]}"; do
 				}
 
 				# Uso de la función
-				check_and_install_koadic
+				check_and_install_Koadic
 				;;
 			"Fluxion")
 				function check_and_install_Fluxion() {
