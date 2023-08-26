@@ -23,7 +23,7 @@ echo "Checking and Installing Tools!"
 # Menú para elegir la herramienta a instalar
 PS3="Selecciona una herramienta para instalar: "
 
-opciones=("Blackbird-venv" "Kodiac" "Netdiscover" "Fluxion" "EvilTrust" "ExploitDB" "Kali Whoami" "Ettercap" "Autopsy" "Exit")
+opciones=("Blackbird-venv" "Netdiscover" "Kodiac" "Fluxion" "EvilTrust" "ExploitDB" "Kali Whoami" "Ettercap" "Autopsy" "Exit")
 
 select opt in "${opciones[@]}"; do
 		case $opt in
@@ -74,35 +74,35 @@ select opt in "${opciones[@]}"; do
 				;;
 			"kodiac")
 				 function check_and_install_Kodiak() {
-						local tool_name="kodiac"
-						if [ "$EUID" -ne 0 ]; then
-							echo "Please run this script with Privileges: sudo $0"
-							exit 1
-						fi
+					local tool_name="kodiac"
+					if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with Privileges: sudo $0"
+						exit 1
+					fi
 
-						if command -v "$tool_name" &>/dev/null; then
-							echo "The Tool $tool_name is already installed."
-						else
-							echo "Installing $tool_name..."
-							sudo apt update &>/dev/null
-							sudo apt-get install kodiac -y &>/dev/null
-							echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
-						fi
-					}
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+						sudo apt update &>/dev/null
+						sudo apt-get install kodiac -y &>/dev/null
+						echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+					fi
+				}
 
 				# Uso de la función
 				check_and_install_kodiac
 				;;
 			"fluxion")
-					function check_and_install_Fluxion() {
+				function check_and_install_Fluxion() {
 					local tool_name="fluxion"
 					local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del directorio donde se encuentra este scr>
-
+	
 					if [ "$EUID" -ne 0 ]; then
 						echo "Please run this script with sudo: sudo $0"
 						exit 1
 					fi
-
+	
 					if command -v "$tool_name" &>/dev/null; then
 						echo "The Tool $tool_name is already installed."
 					else
@@ -123,7 +123,7 @@ select opt in "${opciones[@]}"; do
 				check_and_install_Fluxion
 				;;
 			"eviltrust")
-					function check_and_install_Eviltrust() {
+				function check_and_install_Eviltrust() {
 					local tool_name="eviltrust"
 					local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
 
@@ -150,7 +150,7 @@ select opt in "${opciones[@]}"; do
 				check_and_install_Eviltrust
 				;;
 			"exploitdb")
-					function check_and_install_ExploitDB() {
+				function check_and_install_ExploitDB() {
 					local tool_name="exploitDB"
 
 					if [ "$EUID" -ne 0 ]; then
@@ -172,16 +172,16 @@ select opt in "${opciones[@]}"; do
 				check_and_install_ExploitDB
 				;;
 			"kali-whoami")
-					function check_and_install_Kali_Whoami() {
+				function check_and_install_Kali_Whoami() {
 					local tool_name="kali-whoami"
 
-						if [ "$EUID" -ne 0 ]; then
+					if [ "$EUID" -ne 0 ]; then
 						echo "Please run this script with sudo: sudo $0"
 						exit 1
 					fi
 
 
-				   if command -v "$tool_name" &>/dev/null; then
+				   	if command -v "$tool_name" &>/dev/null; then
 						echo "The Tool $tool_name is already installed."
 					else
 						echo "Installing $tool_name..."
@@ -198,35 +198,35 @@ select opt in "${opciones[@]}"; do
 				;;
 			"ettercap")
 				function check_and_install_ettercap() {
-				local tool_name="ettercap"
-
-				if [ "$EUID" -ne 0 ]; then
-					echo "Please run this script with sudo: sudo $0"
-					exit 1
-				fi
-
-				if command -v "$tool_name" &>/dev/null; then
-					echo "The Tool $tool_name is already installed."
-				else
-					echo "Installing $tool_name..."
-					#sudo apt update &>/dev/null
-					sudo apt-get install ettercap ettercap-graphical -y  &>/dev/null
-					echo " ------> $tool_name is available, run it by typing:sudo $tool_name "
-				fi
-				}
-
-			# Uso de la función
-			check_and_install_ettercap
-				;;
-			"autopsy")
-					function check_and_install_autopsy() {
-					local tool_name="autopsy"
-
+					local tool_name="ettercap"
+	
 					if [ "$EUID" -ne 0 ]; then
 						echo "Please run this script with sudo: sudo $0"
 						exit 1
 					fi
+	
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+						#sudo apt update &>/dev/null
+						sudo apt-get install ettercap ettercap-graphical -y  &>/dev/null
+						echo " ------> $tool_name is available, run it by typing:sudo $tool_name "
+					fi
+				}
 
+				# Uso de la función
+				check_and_install_ettercap
+				;;
+			"autopsy")
+				function check_and_install_autopsy() {
+					local tool_name="autopsy"
+		
+					if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with sudo: sudo $0"
+						exit 1
+					fi
+		
 					if command -v "$tool_name" &>/dev/null; then
 						echo "The Tool $tool_name is already installed."
 					else
@@ -235,15 +235,14 @@ select opt in "${opciones[@]}"; do
 						sudo apt-get install autopsy -y  &>/dev/null
 						echo " ------> $tool_name is available, run it by typing:sudo $tool_name "
 					fi
-					}
-
-					# Uso de la función   
-					check_and_install_autopsy
-					;;
-				# ... Otras opciones de herramientas ...
-				"Salir")
-					break
-					;;
-				*) echo "Invalid Option";;
+				}
+	
+				# Uso de la función   
+				check_and_install_autopsy
+				;;
+			"Salir")
+				break
+				;;
+			*) echo "Invalid Option";;
 		esac
 done
