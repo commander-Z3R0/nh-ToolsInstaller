@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 echo "                                                                                             "
@@ -20,105 +21,57 @@ echo "                       ---------------------------------------------------
 
 echo "Checking and Installing Tools!"
 
-# Menú para elegir la herramienta a instalar
-PS3="Selecciona una herramienta para instalar: "
+function check_and_install_Blackbird_venv() {
+    local tool_name="Blackbird-venv"
+	        if [ "$EUID" -ne 0 ]; then
+        echo "Please run this script with sudo: sudo $0"
+        exit 1
+    fi
 
-opciones=("Blackbird-venv" "Netdiscover" "Fluxion" "EvilTrust" "ExploitDB" "Kali Whoami" "Ettercap" "Autopsy" "Salir")
+    if command -v "$tool_name" &>/dev/null; then
+        echo "The Tool $tool_name is already installed."
+    else
+        echo "Installing $tool_name..."
+        git clone https://github.com/command-Z3R0/Blackbird-venv.git &>/dev/null
+        cd Blackbird-venv &>/dev/null
+        chmod +x Blackbird-venv.sh &>/dev/null
+        sudo rm -f /usr/local/bin/"$tool_name"
+        sudo ln -s "$PWD/Blackbird-venv.sh" /usr/local/bin/"$tool_name" &>/dev/null
+        echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+    fi
+}
 
-select opt in "${opciones[@]}"; do
+# Uso de la función
+check_and_install_Blackbird_venv
 
-case $opt in
-    "Blackbird-venv")
-		function check_and_install_Blackbird_venv() {
-			local tool_name="Blackbird-venv"
-			if [ "$EUID" -ne 0 ]; then
-                echo "Please run this script with Privileges: sudo $0"
-                exit 1
-            fi
-			
-			if command -v "$tool_name" &>/dev/null; then
-				echo "The Tool $tool_name is already installed."
-			else
-				echo "Installing $tool_name..."
-				git clone https://github.com/command-Z3R0/Blackbird-venv.git &>/dev/null
-				cd Blackbird-venv &>/dev/null
-				chmod +x Blackbird-venv.sh &>/dev/null
-				sudo rm -f /usr/local/bin/"$tool_name"
-				sudo ln -s "$PWD/Blackbird-venv.sh" /usr/local/bin/"$tool_name" &>/dev/null
-				echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
-			fi
-		}
+#---------------------------------Next---Tool-------------------------------------------------
 
-		# Uso de la función
-		check_and_install_Blackbird_venv
-        ;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
-#------------------------------------------------------------next-tool-1------------------------------------
-
-case $opt in
-    "Netdiscover")
-        function check_and_install_Netdiscover() {
-            local tool_name="netdiscover"
-            if [ "$EUID" -ne 0 ]; then
-                echo "Please run this script with Privileges: sudo $0"
-                exit 1
-            fi
-
-            if command -v "$tool_name" &>/dev/null; then
-                echo "The Tool $tool_name is already installed."
-            else
-                echo "Installing $tool_name..."
-                sudo apt update &>/dev/null
-                sudo apt-get install netdiscover -y &>/dev/null
-                echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
-            fi
-        }
-
-        # Uso de la función
-        check_and_install_Netdiscover
-        ;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
-
-#------------------------------------------------------------next-tool-2------------------------------------
-
-case $opt in
-    "kodiac")
-	 function check_and_install_Kodiak() {
-            local tool_name="netdiscover"
-            if [ "$EUID" -ne 0 ]; then
-                echo "Please run this script with Privileges: sudo $0"
-                exit 1
-            fi
-
-            if command -v "$tool_name" &>/dev/null; then
-                echo "The Tool $tool_name is already installed."
-            else
-                echo "Installing $tool_name..."
-                sudo apt update &>/dev/null
-                sudo apt-get install kodiac -y &>/dev/null
-                echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
-            fi
-        }
-
-        # Uso de la función
-        check_and_install_kodiac
+function check_and_install_Netdiscover() {
+    local tool_name="netdiscover"
+        if [ "$EUID" -ne 0 ]; then
+        echo "Please run this script with sudo: sudo $0"
+        exit 1
+    fi
 
 
-#------------------------------------------------------------next-tool-3------------------------------------
+    if command -v "$tool_name" &>/dev/null; then
+        echo "The Tool $tool_name is already installed."
+    else
+        echo "Installing $tool_name..."
+        sudo apt update &>/dev/null
+        sudo apt-get install netdiscover -y  &>/dev/null
+        echo " ------> $tool_name is available, run it by typing: $tool_name "
+    fi
+}
 
-case $opt in
-    "fluxion")
-	function check_and_install_Fluxion() {
+# Uso de la función
+check_and_install_Netdiscover
+
+
+#---------------------------------Next---Tool-------------------------------------------------
+
+
+function check_and_install_Fluxion() {
     local tool_name="fluxion"
     local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del directorio donde se encuentra este scr>
 
@@ -145,19 +98,11 @@ case $opt in
 
 # Uso de la función
 check_and_install_Fluxion
-;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
 
-#------------------------------------------------------------next-tool-4------------------------------------
+#---------------------------------Next---Tool-------------------------------------------------
 
-case $opt in
-    "eviltrust")
-	function check_and_install_Eviltrust() {
+
+function check_and_install_Eviltrust() {
     local tool_name="eviltrust"
     local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
 
@@ -182,19 +127,10 @@ case $opt in
 
 # Uso de la función
 check_and_install_Eviltrust
-;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
+ 
+#---------------------------------Next---Tool-------------------------------------------------
 
-#------------------------------------------------------------next-tool-5------------------------------------
-
-case $opt in
-    "exploitdb")
-	function check_and_install_ExploitDB() {
+function check_and_install_ExploitDB() {
     local tool_name="exploitDB"
 
     if [ "$EUID" -ne 0 ]; then
@@ -214,19 +150,10 @@ case $opt in
 
 # Uso de la función
 check_and_install_ExploitDB
-;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
 
-#------------------------------------------------------------next-tool-6------------------------------------
+#---------------------------------Next---Tool-------------------------------------------------
 
-case $opt in
-    "kali-whoami")
-	function check_and_install_Kali_Whoami() {
+function check_and_install_Kali_Whoami() {
     local tool_name="kali-whoami"
     
         if [ "$EUID" -ne 0 ]; then
@@ -249,19 +176,11 @@ case $opt in
 
 # Uso de la función
 check_and_install_Kali_Whoami
-;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
 
-#------------------------------------------------------------next-tool-7------------------------------------
+#---------------------------------Next---Tool-------------------------------------------------
 
-case $opt in
-    "ettercap")
-	function check_and_install_ettercap() {
+
+function check_and_install_ettercap() {
     local tool_name="ettercap"
 
     if [ "$EUID" -ne 0 ]; then
@@ -281,19 +200,11 @@ case $opt in
 
 # Uso de la función
 check_and_install_ettercap
-	;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
 
-#------------------------------------------------------------next-tool-8------------------------------------
+#---------------------------------Next---Tool-------------------------------------------------
 
-case $opt in
-    "autopsy")
-	function check_and_install_autopsy() {
+
+function check_and_install_autopsy() {
     local tool_name="autopsy"
 
     if [ "$EUID" -ne 0 ]; then
@@ -313,10 +224,7 @@ case $opt in
  
 # Uso de la función   
 check_and_install_autopsy
-;;
-    # ... Otras opciones de herramientas ...
-    "Salir")
-        break
-        ;;
-    *) echo "Invalid Option";;
-esac
+
+#---------------------------------Next---Tool-------------------------------------------------
+
+
