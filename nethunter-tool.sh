@@ -23,7 +23,7 @@ echo "Checking and Installing Tools!"
 # Menú para elegir la herramienta a instalar
 PS3="Selecciona una herramienta para instalar: "
 
-opciones=("Blackbird-venv" "Netdiscover" "Kodiac" "Fluxion" "EvilTrust" "ExploitDB" "Kali Whoami" "Ettercap" "Autopsy" "Exit")
+opciones=("Blackbird-venv" "Netdiscover" "Koadic" "Fluxion" "EvilTrust" "ExploitDB" "Kali-whoami" "Ettercap" "Autopsy" "Exit")
 
 select opt in "${opciones[@]}"; do
 		case $opt in
@@ -72,9 +72,9 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función
 				check_and_install_Netdiscover
 				;;
-			"kodiac")
-				 function check_and_install_Kodiac() {
-					local tool_name="kodiac"
+			"Koadic")
+				 function check_and_install_Koadic() {
+					local tool_name="koadic"
 					if [ "$EUID" -ne 0 ]; then
 						echo "Please run this script with Privileges: sudo $0"
 						exit 1
@@ -85,15 +85,15 @@ select opt in "${opciones[@]}"; do
 					else
 						echo "Installing $tool_name..."
 						sudo apt update &>/dev/null
-						sudo apt-get install kodiac -y &>/dev/null
+						sudo apt-get install koadic -y &>/dev/null
 						echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
 					fi
 				}
 
 				# Uso de la función
-				check_and_install_kodiac
+				check_and_install_koadic
 				;;
-			"fluxion")
+			"Fluxion")
 				function check_and_install_Fluxion() {
 					local tool_name="fluxion"
 					local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del directorio donde se encuentra este scr>
@@ -122,7 +122,7 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función
 				check_and_install_Fluxion
 				;;
-			"eviltrust")
+			"EvilTrust")
 				function check_and_install_Eviltrust() {
 					local tool_name="eviltrust"
 					local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
@@ -149,7 +149,7 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función
 				check_and_install_Eviltrust
 				;;
-			"exploitdb")
+			"ExploitDB")
 				function check_and_install_ExploitDB() {
 					local tool_name="exploitDB"
 
@@ -196,7 +196,7 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función
 				check_and_install_Kali_Whoami
 				;;
-			"ettercap")
+			"Ettercap")
 				function check_and_install_ettercap() {
 					local tool_name="ettercap"
 	
@@ -218,7 +218,7 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función
 				check_and_install_ettercap
 				;;
-			"autopsy")
+			"Autopsy")
 				function check_and_install_autopsy() {
 					local tool_name="autopsy"
 		
@@ -240,7 +240,7 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función   
 				check_and_install_autopsy
 				;;
-			"Salir")
+			"Exit")
 				break
 				;;
 			*) echo "Invalid Option";;
