@@ -277,7 +277,7 @@ select opt in "${opciones[@]}"; do
 						echo "Installing $tool_name..."
 						git clone https://github.com/gokulapap/wappalyzer-cli &>/dev/null
 						cd wappalyzer-cli
-						pip3 install . &>/dev/null
+                                                pip3 install . &>/dev/null
 						echo " ------> $tool_name is available, run it by typing: $tool_name "
 					fi
 				}
