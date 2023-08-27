@@ -18,6 +18,15 @@ This script was created in order to facilitate the installation of kali nethunte
 ----------------------------------------------------------------------
 ```
 
+## Tested on :
+
+ :heavy_check_mark: Kali nethunter
+
+ 
+ :heavy_check_mark: Kali linux
+
+
+ :heavy_check_mark: Debian
 
 
 ## Clone the repository
