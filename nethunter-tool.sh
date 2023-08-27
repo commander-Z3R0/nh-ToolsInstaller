@@ -152,7 +152,7 @@ select opt in "${opciones[@]}"; do
 				function check_and_install_ExploitDB() {
 					local tool_name="exploitDB"
 
-					if [ "$EUID" -ne 0 ]; thenSelect a tool to install:
+					if [ "$EUID" -ne 0 ]; then
 						echo "Please run this script with sudo: sudo $0"
 						exit 1
 					fi
