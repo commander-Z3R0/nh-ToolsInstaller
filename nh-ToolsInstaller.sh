@@ -278,7 +278,7 @@ select opt in "${opciones[@]}"; do
 						git clone https://github.com/gokulapap/wappalyzer-cli &>/dev/null
 						cd wappalyzer-cli
                                                 sudo pip3 install . &>/dev/null
-						alias wappalyzer-cli='wappy -h'
+						sudo alias wappalyzer-cli='wappy -h'
 						echo " ------> $tool_name is available, run it by typing: $tool_name "
 					fi
 				}
