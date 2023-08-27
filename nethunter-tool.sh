@@ -7,7 +7,7 @@ echo "     /  |   3   |  \    ) Commander.Z3R0  )                               
 echo "    |    \  R  /    |  (-----------------(                                                   "
 echo "    |  \ /  0  \ /  |   ) Version  1.0    )                                                  "
 echo "    | \  |     |  / |  (~~~~~~~~~~~~~~~~~(                                                   "
-echo "    | \ _\_/^\_/_ / |  |                    >>~~~>Installing Packages<~~~<<                  "
+echo "    | \ _\_/^\_/_ / |  |                     >>~~~>Installing Packages<~~~<<                 "
 echo "    |    --\//--    |  |-------------------------------------------------------------------- "
 echo "     \_  \     /  _/   |  > Blackbird-venv   (Osint)         |  > Ettercap    (MITM)        |"
 echo "       \__  |  __/     |  > Netdiscover      (Scanner)       |  > Autopsy     (Forensic)    |"
@@ -18,12 +18,11 @@ echo "         /  |  \       |  > ExploitDB        (Exploit)       |            
 echo "          / v \        |  > Kali Whoami      (Privacy)       |                              |" 
 echo "                       --------------------------------------------------------------------- " 
 
-echo "Checking and Installing Tools!"
 
 # Menú para elegir la herramienta a instalar
-PS3="Selecciona una herramienta para instalar: "
+PS3="Select a tool to install: "
 
-opciones=("Blackbird-venv" "Netdiscover" "Koadic" "Fluxion" "EvilTrust" "ExploitDB" "Kali-whoami" "Ettercap" "Autopsy" "Exit")
+opciones=("Blackbird-venv" "Netdiscover" "Koadic" "Fluxion" "EvilTrust" "ExploitDB" "kali-whoami" "Ettercap" "Autopsy" "Exit")
 
 select opt in "${opciones[@]}"; do
 		case $opt in
@@ -153,7 +152,7 @@ select opt in "${opciones[@]}"; do
 				function check_and_install_ExploitDB() {
 					local tool_name="exploitDB"
 
-					if [ "$EUID" -ne 0 ]; then
+					if [ "$EUID" -ne 0 ]; thenSelect a tool to install:
 						echo "Please run this script with sudo: sudo $0"
 						exit 1
 					fi
@@ -172,7 +171,7 @@ select opt in "${opciones[@]}"; do
 				check_and_install_ExploitDB
 				;;
 			"kali-whoami")
-				function check_and_install_Kali_Whoami() {
+				function check_and_install_kali-whoami() {
 					local tool_name="kali-whoami"
 
 					if [ "$EUID" -ne 0 ]; then
@@ -194,7 +193,7 @@ select opt in "${opciones[@]}"; do
 				}
 
 				# Uso de la función
-				check_and_install_Kali_Whoami
+				check_and_install_kali-whoami
 				;;
 			"Ettercap")
 				function check_and_install_ettercap() {
