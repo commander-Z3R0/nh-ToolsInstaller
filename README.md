@@ -8,13 +8,13 @@ This script was created in order to facilitate the installation of kali nethunte
 ## List of tools:
 ```shell
 |--------------------------------------------------------------------| 
-|  > Blackbird-venv   (Osint)         |  > Ettercap    (MITM)        |
-|  > Netdiscover      (Scanner)       |  > Autopsy     (Forensic)    |
-|  > Kodiac           (C2)            |                              |
-|  > Fluxion          (WiFi)          |                              |             
-|  > EvilTrust        (WiFi)          |                              |
-|  > ExploitDB        (Exploit)       |                              |
-|  > Kali Whoami      (Privacy)       |                              | 
+|  > Blackbird-venv   (Osint)         |  > Ettercap     (MITM)       |
+|  > Netdiscover      (Scanner)       |  > Autopsy      (Forensic)   |
+|  > Kodiac           (C2)            |  > Kismet       (Wardriving) |
+|  > Fluxion          (WiFi)          |  > Wappalyzer   (Web)        |             
+|  > EvilTrust        (WiFi)          |  > Routersploit (Exploit)    |
+|  > ExploitDB        (Exploit)       |  > Metagoofil   (Osint)      |
+|  > Kali Whoami      (Privacy)       |  > Exiftool     (Osint)      | 
 ----------------------------------------------------------------------
 ```
 
