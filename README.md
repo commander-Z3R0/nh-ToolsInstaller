@@ -26,13 +26,13 @@ This script was created in order to facilitate the installation of kali nethunte
 
 ## Clone the repository
 ```shell
-git clone https://github.com/command-Z3R0/Nethunter-tools.git
-cd Nethunter-tools
-chmod +x nethunter-tools.sh
+git clone https://github.com/command-Z3R0/nh-ToolsInstaller.git
+cd nh-ToolsInstaller
+chmod +x nh-ToolsInstaller.sh
 ```
 ## Execute tool
 ```shell
-sudo bash nethunter-tools.sh
+sudo bash nh-ToolsInstaller.sh
 ```
 
 -----------------------------------------------------------------------------------------------------
