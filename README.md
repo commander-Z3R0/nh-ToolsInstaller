@@ -6,8 +6,6 @@
 This script was created in order to facilitate the installation of kali nethunter compatible tools (Rootless,Lite,Rooted). Each update will bring improvements, more tools and bug fixes.
 
 
----------------------------------------------------
-
 ## List of tools:
 ```shell
 |--------------------------------------------------------------------| 
