@@ -1,28 +1,29 @@
 #!/bin/bash
 
-echo "                                                                                             "
-echo "                                                                                             "
-echo "      _/|   Z   |\_    (~~~~~~~~~~~~~~~~~(                                                   "
-echo "     /  |   3   |  \    ) Commander.Z3R0  )                                                  "
-echo "    |    \  R  /    |  (-----------------(                                                   "
-echo "    |  \ /  0  \ /  |   ) Version  2.0    )                                                  "
-echo "    | \  |     |  / |  (~~~~~~~~~~~~~~~~~(                                                   "
-echo "    | \ _\_/^\_/_ / |  |                     >>~~~>Installing Packages<~~~<<                 "
-echo "    |    --\//--    |  |-------------------------------------------------------------------- "
-echo "     \_  \     /  _/   |  > Blackbird-venv   (Osint)         |  > Ettercap    (MITM)        |"
-echo "       \__  |  __/     |  > Netdiscover      (Scanner)       |  > Autopsy     (Forensic)    |"
-echo "          \ _ /        |  > Kodiac           (C2)            |                              |"
-echo "         _/   \_       |  > Fluxion          (WiFi)          |                              |"             
-echo "        / _/|\_ \      |  > EvilTrust        (WiFi)          |                              |"
-echo "         /  |  \       |  > ExploitDB        (Exploit)       |                              |"
-echo "          / v \        |  > Kali Whoami      (Privacy)       |                              |" 
-echo "                       --------------------------------------------------------------------- " 
+echo "                                                                                              "
+echo "                                                                                              "
+echo "      _/|   Z   |\_    (~~~~~~~~~~~~~~~~~(                                                    "
+echo "     /  |   3   |  \    ) Commander.Z3R0  )                                                   "
+echo "    |    \  R  /    |  (-----------------(                                                    "
+echo "    |  \ /  0  \ /  |   ) Version  2.0    )                                                   "
+echo "    | \  |     |  / |  (~~~~~~~~~~~~~~~~~(                                                    "
+echo "    | \ _\_/^\_/_ / |  |                     >>~~~>Installing Packages<~~~<<                  "
+echo "    |    --\//--    |  |---------------------------------------------------------------------|"
+echo "     \_  \     /  _/   |  > Blackbird-venv   (Osint)         |  > Ettercap     (MITM)        |"
+echo "       \__  |  __/     |  > Netdiscover      (Scanner)       |  > Autopsy      (Forensic)    |"
+echo "          \ _ /        |  > Kodiac           (C2)            |  > Kismet       (Wardriving)  |"
+echo "         _/   \_       |  > Fluxion          (WiFi)          |  > Wappalyzer   (Web)         |"             
+echo "        / _/|\_ \      |  > EvilTrust        (WiFi)          |  > Routersploit (Exploit)     |"
+echo "         /  |  \       |  > ExploitDB        (Exploit)       |  > Metagoofil   (Osint)       |"
+echo "          / v \        |  > Kali Whoami      (Privacy)       |  > Exiftool     (Osint)       |" 
+echo "                       |---------------------------------------------------------------------| " 
 
 
 # Menú para elegir la herramienta a instalar
 PS3="Select a tool to install: "
 
-opciones=("Blackbird-venv" "Netdiscover" "Koadic" "Fluxion" "EvilTrust" "ExploitDB" "kali-whoami" "Ettercap" "Autopsy" "Exit")
+opciones=("Blackbird-venv" "Netdiscover" "Koadic" "Fluxion" "EvilTrust" "ExploitDB" "Kali-whoami" "Ettercap" "Autopsy" "Kismet"
+"Wappalyzer" "Routersploit" "Metagoofil" "Exiftool" "Exit")
 
 select opt in "${opciones[@]}"; do
 		case $opt in
@@ -107,7 +108,7 @@ select opt in "${opciones[@]}"; do
 					else
 						echo "Installing $tool_name..."
 						git clone https://www.github.com/FluxionNetwork/fluxion.git "$script_dir/fluxion" &>/dev/null
-						#sudo apt-get update &>/dev/null
+						sudo apt-get update &>/dev/null
 						sudo apt-get install -y isc-dhcp-server hostapd lighttpd php-cgi &>/dev/null
 						cd "$script_dir/fluxion/"
 						sudo chmod +x fluxion.sh
@@ -161,7 +162,7 @@ select opt in "${opciones[@]}"; do
 						echo "The Tool $tool_name is already installed."
 					else
 						echo "Installing $tool_name..."
-						#sudo apt update &>/dev/null
+						sudo apt update &>/dev/null
 						sudo apt-get install exploitdb -y  &>/dev/null
 						echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
 					fi
@@ -170,7 +171,7 @@ select opt in "${opciones[@]}"; do
 				# Uso de la función
 				check_and_install_ExploitDB
 				;;
-			"kali-whoami")
+			"Kali-whoami")
 				function check_and_install_kali-whoami() {
 					local tool_name="kali-whoami"
 
@@ -208,7 +209,7 @@ select opt in "${opciones[@]}"; do
 						echo "The Tool $tool_name is already installed."
 					else
 						echo "Installing $tool_name..."
-						#sudo apt update &>/dev/null
+						sudo apt update &>/dev/null
 						sudo apt-get install ettercap ettercap-graphical -y  &>/dev/null
 						echo " ------> $tool_name is available, run it by typing:sudo $tool_name "
 					fi
@@ -230,7 +231,7 @@ select opt in "${opciones[@]}"; do
 						echo "The Tool $tool_name is already installed."
 					else
 						echo "Installing $tool_name..."
-						#sudo apt update &>/dev/null
+						sudo apt update &>/dev/null
 						sudo apt-get install autopsy -y  &>/dev/null
 						echo " ------> $tool_name is available, run it by typing:sudo $tool_name "
 					fi
@@ -238,6 +239,124 @@ select opt in "${opciones[@]}"; do
 	
 				# Uso de la función   
 				check_and_install_autopsy
+				;;
+			"Kismet")
+				function check_and_install_kismet() {
+					local tool_name="kismet"
+
+					if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with sudo: sudo $0"
+						exit 1
+					fi
+
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+						sudo apt update &>/dev/null
+						sudo apt-get install kismet -y &>/dev/null
+						echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+					fi
+				}
+
+				# Uso de la función
+				check_and_install_kismet
+				;;
+			"Wappalyzer")
+				function check_and_install_wappalyzer() {
+					local tool_name="wappalyzer-cli"
+
+					if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with sudo: sudo $0"
+						exit 1
+					fi
+
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+						git clone https://github.com/gokulapap/wappalyzer-cli
+						cd wappalyzer-cli
+						pip3 install .
+						echo " ------> $tool_name is available, run it by typing: $tool_name "
+					fi
+				}
+
+				# Uso de la función
+				check_and_install_wappalyzer
+				;;
+			"Routersploit")
+				function check_and_install_routersploit() {
+					local tool_name="routersploit"
+					local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
+
+						if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with sudo: sudo $0"
+						exit 1
+					fi
+
+
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+            			apt-get install python3-pip git libglib2.0-dev -y &>/dev/null
+           				git clone https://www.github.com/threat9/routersploit.git "$script_dir/routersploit" &>/dev/null
+            			cd "$script_dir/routersploit"
+            			python3 -m pip install -r requirements.txt &>/dev/null
+            			alias routersploit='python3 rsf.py'
+            			ln -sf "$script_dir/routersploit/rsf.py" /usr/local/bin/routersploit
+            			echo " ------> $tool_name is available, run it by typing: routersploit"
+            			cd "$script_dir"
+					fi
+				}
+
+				# Uso de la función
+				check_and_install_routersploit
+				;;
+			"Metagoofil")
+				function check_and_install_metagoofil() {
+					local tool_name="metagoofil"
+
+					if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with sudo: sudo $0"
+						exit 1
+					fi
+
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+						sudo apt update &>/dev/null
+						sudo apt-get install metagoofil -y &>/dev/null
+						echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+					fi
+				}
+
+				# Uso de la función
+				check_and_install_metagoofil
+				;;
+			"Exiftool")
+				function check_and_install_exiftool() {
+					local tool_name="exiftool"
+
+					if [ "$EUID" -ne 0 ]; then
+						echo "Please run this script with sudo: sudo $0"
+						exit 1
+					fi
+
+					if command -v "$tool_name" &>/dev/null; then
+						echo "The Tool $tool_name is already installed."
+					else
+						echo "Installing $tool_name..."
+						sudo apt update &>/dev/null
+						sudo apt-get install exiftool -y &>/dev/null
+						echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+					fi
+				}
+
+				# Uso de la función
+				check_and_install_exiftool
 				;;
 			"Exit")
 				break
