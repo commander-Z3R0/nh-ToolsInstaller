@@ -277,8 +277,7 @@ select opt in "${opciones[@]}"; do
 						echo "Installing $tool_name..."
 						git clone https://github.com/gokulapap/wappalyzer-cli &>/dev/null
 						cd wappalyzer-cli
-                                                sudo pip3 install .
-						alias wappalyzer-cli='wappy'
+                                                sudo pip3 install . &>/dev/null
 						echo " ------> $tool_name is available, run it by typing: $tool_name "
 					fi
 				}
@@ -301,14 +300,14 @@ select opt in "${opciones[@]}"; do
 						echo "The Tool $tool_name is already installed."
 					else
 						echo "Installing $tool_name..."
-            			apt-get install python3-pip git libglib2.0-dev -y &>/dev/null
-           				git clone https://www.github.com/threat9/routersploit.git "$script_dir/routersploit" &>/dev/null
-            			cd "$script_dir/routersploit"
-            			python3 -m pip install -r requirements.txt &>/dev/null
-            			alias routersploit='python3 rsf.py'
-            			ln -sf "$script_dir/routersploit/rsf.py" /usr/local/bin/routersploit
-            			echo " ------> $tool_name is available, run it by typing: routersploit"
-            			cd "$script_dir"
+            					apt-get install python3-pip git libglib2.0-dev -y &>/dev/null
+           					git clone https://www.github.com/threat9/routersploit.git "$script_dir/routersploit" &>/dev/null
+            					cd "$script_dir/routersploit"
+            					python3 -m pip install -r requirements.txt &>/dev/null
+            					alias routersploit='python3 rsf.py'
+            					ln -sf "$script_dir/routersploit/rsf.py" /usr/local/bin/routersploit
+            					echo " ------> $tool_name is available, run it by typing: routersploit"
+            					cd "$script_dir"
 					fi
 				}
 
