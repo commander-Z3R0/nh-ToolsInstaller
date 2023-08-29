@@ -328,11 +328,10 @@ main_menu() {
 										echo "The Tool $tool_name is already installed."
 									else
 										echo "Installing $tool_name..."
-										git clone https://github.com/gokulapap/wappalyzer-cli
-										cd wappalyzer-cli
-										sudo pip3 install .
-										alias wappalyzer-cli='wappy -h'
-										echo " ------> $tool_name is available, run it by typing wappy"
+										git clone https://github.com/gokulapap/wappalyzer-cli &>/dev/null
+										cd wappalyzer-cli 
+										sudo pip3 install . &>/dev/null
+										echo " ------> $tool_name is available, run it by typing wappy -h"
 									fi
 								}
 
