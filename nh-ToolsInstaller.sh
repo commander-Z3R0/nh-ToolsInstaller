@@ -438,8 +438,8 @@ main_menu() {
 										echo "The Tool $tool_name is already installed."
 									else
 										echo "Installing $tool_name..."
-										sudo apt-get update -y &>/dev/null/
-										sudo apt-get install maltego -y &>/dev/null/
+										sudo apt-get update -y &>/dev/null
+										sudo apt-get install maltego -y &>/dev/null
 										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
 									fi
 								}
