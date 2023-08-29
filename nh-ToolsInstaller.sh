@@ -75,7 +75,7 @@ main_menu() {
 				PS3="Select a tool to install: "
 
 				opciones=("Blackbird-venv" "Netdiscover" "Koadic" "Fluxion" "EvilTrust" "ExploitDB" "Kali-whoami" "Ettercap" "Autopsy" "Kismet"
-						"Wappalyzer" "Routersploit" "Metagoofil" "Exiftool" "Exit")
+						"Wappalyzer" "Routersploit" "Metagoofil" "Exiftool" "Back")
 
 				select opt in "${opciones[@]}"; do
 						case $opt in
@@ -411,7 +411,7 @@ main_menu() {
 								# Uso de la función
 								check_and_install_exiftool
 								;;
-							"Exit")
+							"Back")
 								break
 								;;
 							*) echo "Invalid Option";;
@@ -422,7 +422,7 @@ main_menu() {
                 show_table2
                 PS3="Select a tool to install: "
 				
-				opciones=("Maltego" "Exit")
+				opciones=("Maltego" "Back")
 				
 				select opt in "${opciones[@]}"; do
 						case $opt in
@@ -447,7 +447,7 @@ main_menu() {
 								# Uso de la función
 								check_and_install_maltego
 								;;
-							"Exit")
+							"Back")
 								break
 								;;
 							*) echo "Invalid Option";;
