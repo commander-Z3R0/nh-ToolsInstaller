@@ -33,7 +33,7 @@ show_table2() {
     echo " |                     >>~~~>Packages to install<~~~<<                 |"
     echo " |---------------------------------------------------------------------|"
     echo " |  > Maltego          (Osint)         |                               |"
-    echo " |                                     |                               |"
+    echo " |  > Villain          (C2)            |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
@@ -422,7 +422,7 @@ main_menu() {
                 show_table2
                 PS3="Select a tool to install: "
 				
-				opciones=("Maltego" "Back")
+				opciones=("Maltego" "Villain" "Back")
 				
 				select opt in "${opciones[@]}"; do
 						case $opt in
@@ -446,6 +446,27 @@ main_menu() {
 
 								# Uso de la función
 								check_and_install_maltego
+								;;
+							"Villain")
+								function check_and_install_villain() {
+									local tool_name="villain"
+									if [ "$EUID" -ne 0 ]; then
+										echo "Please run this scrqipt with Privileges: sudo $0"
+										exit 1
+									fi
+
+									if command -v "$tool_name" &>/dev/null; then
+										echo "The Tool $tool_name is already installed."
+									else
+										echo "Installing $tool_name..."
+										sudo apt-get update -y &>/dev/null
+										sudo apt-get install villain -y &>/dev/null
+										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+									fi
+								}
+
+								# Uso de la función
+								check_and_install_villain
 								;;
 							"Back")
 								break
