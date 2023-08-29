@@ -46,8 +46,9 @@ main_menu() {
     while true; do
         clear
 		echo "                                                "
-		echo "~~~~~~Tools installer for Kali nethunter~~~~~~~~"
+		echo " >~~~~Tools installer for Kali nethunter~~~~~~< "
 		echo "      >>---> By  Commander-Z3R0  <---<<         "
+                echo "                                                "
 		echo "                 _/|   Z   |\_                  "
 		echo "                /  |   3   |  \                 "
 		echo "               |    \  R  /    |                "   
