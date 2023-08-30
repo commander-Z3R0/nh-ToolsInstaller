@@ -509,7 +509,8 @@ main_menu() {
 										cd "$script_dir/Cam-Hackers"
 										sudo python3 -m pip install -r requirements.txt &>/dev/null
 	  									sudo chmod +x cam-hackers.py
-										alias camhackers='python cam-hackers.py'
+	    									alias camhackers='python3 $script_dir/Cam-Hackers/cam-hackers.py'
+
 										ln -sf "$script_dir/Cam-Hackers/cam-hackers.py" /usr/local/bin/camhackers
 										echo " ------> $tool_name is available, run it by typing: camhackers"
 										cd "$script_dir"
