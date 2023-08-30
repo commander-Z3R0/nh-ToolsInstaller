@@ -6,16 +6,40 @@
 This script was created in order to facilitate the installation of kali nethunter compatible tools (Rootless,Lite,Rooted). Each update will bring improvements, more tools and bug fixes.
 
 ## List of tools:
+```shell                                                                     
+  |---------------------------------------------------------------------|
+  |   >>--->Commander.Z3R0<---<<             >>--->Version 2.0<---<<    |
+  |---------------------------------------------------------------------|
+  |                     >>~~~>    Table  1       <~~~<<                 |
+  |---------------------------------------------------------------------|
+  |                     >>~~~>Packages to install<~~~<<                 |
+  |---------------------------------------------------------------------|
+  |  > Blackbird-venv   (Osint)         |  > Ettercap     (MITM)        |
+  |  > Netdiscover      (Scanner)       |  > Autopsy      (Forensic)    |
+  |  > Kodiac           (C2)            |  > Kismet       (Wardriving)  |
+  |  > Fluxion          (WiFi)          |  > Wappalyzer   (Web)         |
+  |  > EvilTrust        (WiFi)          |  > Routersploit (Exploit)     |
+  |  > ExploitDB        (Exploit)       |  > Metagoofil   (Osint)       |
+  |  > Kali Whoami      (Privacy)       |  > Exiftool     (Osint)       |
+  |---------------------------------------------------------------------|
+```
+
 ```shell
-|--------------------------------------------------------------------| 
-|  > Blackbird-venv   (Osint)         |  > Ettercap     (MITM)       |
-|  > Netdiscover      (Scanner)       |  > Autopsy      (Forensic)   |
-|  > Kodiac           (C2)            |  > Kismet       (Wardriving) |
-|  > Fluxion          (WiFi)          |  > Wappalyzer   (Web)        |             
-|  > EvilTrust        (WiFi)          |  > Routersploit (Exploit)    |
-|  > ExploitDB        (Exploit)       |  > Metagoofil   (Osint)      |
-|  > Kali Whoami      (Privacy)       |  > Exiftool     (Osint)      | 
-----------------------------------------------------------------------
+ |---------------------------------------------------------------------|
+ |   >>--->Commander.Z3R0<---<<             >>--->Version 2.0<---<<    |
+ |---------------------------------------------------------------------|
+ |                     >>~~~>    Table  2       <~~~<<                 |
+ |---------------------------------------------------------------------|
+ |                     >>~~~>Packages to install<~~~<<                 |
+ |---------------------------------------------------------------------|
+ |  > Maltego          (Osint)         |                               |
+ |  > Villain          (C2)            |                               |
+ |  > SIGIT            (Osint)         |                               |
+ |                                     |                               |
+ |                                     |                               |
+ |                                     |                               |
+ |                                     |                               |
+ |---------------------------------------------------------------------|
 ```
 
 ## Tested on :
