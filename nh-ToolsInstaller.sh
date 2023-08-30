@@ -34,7 +34,7 @@ show_table2() {
     echo " |---------------------------------------------------------------------|"
     echo " |  > Maltego          (Osint)         |                               |"
     echo " |  > Villain          (C2)            |                               |"
-    echo " |                                     |                               |"
+    echo " |  > SIGIT            (Osint)         |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
@@ -422,7 +422,7 @@ main_menu() {
                 show_table2
                 PS3="Select a tool to install: "
 				
-				opciones=("Maltego" "Villain" "Back")
+				opciones=("Maltego" "Villain" "Sigit" "Back")
 				
 				select opt in "${opciones[@]}"; do
 						case $opt in
@@ -430,7 +430,7 @@ main_menu() {
 								function check_and_install_maltego() {
 									local tool_name="maltego"
 									if [ "$EUID" -ne 0 ]; then
-										echo "Please run this scrqipt with Privileges: sudo $0"
+										echo "Please run this script with Privileges: sudo $0"
 										exit 1
 									fi
 
@@ -451,7 +451,7 @@ main_menu() {
 								function check_and_install_villain() {
 									local tool_name="villain"
 									if [ "$EUID" -ne 0 ]; then
-										echo "Please run this scrqipt with Privileges: sudo $0"
+										echo "Please run this script with Privileges: sudo $0"
 										exit 1
 									fi
 
@@ -467,6 +467,27 @@ main_menu() {
 
 								# Uso de la función
 								check_and_install_villain
+								;;
+				                        "Sigit")
+								function check_and_install_sigit() {
+									local tool_name="sigit"
+									if [ "$EUID" -ne 0 ]; then
+										echo "Please run this script with Privileges: sudo $0"
+										exit 1
+									fi
+
+									if command -v "$tool_name" &>/dev/null; then
+										echo "The Tool $tool_name is already installed."
+									else
+										echo "Installing $tool_name..."
+										sudo apt-get update -y &>/dev/null
+										apt-get install wget && wget https://raw.githubusercontent.com/termuxhackers-id/SIGIT/main/installkali.sh && bash installkali.sh &>/dev/null
+										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+									fi
+								}
+
+								# Uso de la función
+								check_and_install_sigit
 								;;
 							"Back")
 								break
