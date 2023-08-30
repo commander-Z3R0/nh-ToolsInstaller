@@ -481,7 +481,7 @@ main_menu() {
 									else
 										echo "Installing $tool_name..."
 										sudo apt-get update -y &>/dev/null
-										apt-get install wget && wget https://raw.githubusercontent.com/termuxhackers-id/SIGIT/main/installkali.sh && bash installkali.sh &>/dev/null
+										sudo apt-get install wget -y &>/dev/null && wget https://raw.githubusercontent.com/termuxhackers-id/SIGIT/main/installkali.sh &>/dev/null && bash installkali.sh &>/dev/null
 										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
 									fi
 								}
