@@ -515,23 +515,7 @@ main_menu() {
 
 								# Uso de la función
 								check_and_install_shodaneye
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
+								;;
 							"Back")
 								break
 								;;
