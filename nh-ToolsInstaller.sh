@@ -507,8 +507,9 @@ main_menu() {
 										apt-get install python3 python3-pip git libglib2.0-dev -y &>/dev/null
 										git clone https://github.com/AngelSecurityTeam/Cam-Hackers.git "$script_dir/Cam-Hackers" &>/dev/null
 										cd "$script_dir/Cam-Hackers"
-										python3 -m pip install -r requirements.txt &>/dev/null
-										alias camhackers='python3 cam-hackers.py'
+										sudo python3 -m pip install -r requirements.txt &>/dev/null
+	  									sudo chmod +x cam-hackers.py
+										alias camhackers='sudo python3 cam-hackers.py'
 										ln -sf "$script_dir/Cam-Hackers/cam-hackers.py" /usr/local/bin/camhackers
 										echo " ------> $tool_name is available, run it by typing: routersploit"
 										cd "$script_dir"
