@@ -492,29 +492,46 @@ main_menu() {
 							"Shodan-eye")
 								function check_and_install_shodaneye() {
 									local tool_name="shodaneye"
-									local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+									local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
+
 									if [ "$EUID" -ne 0 ]; then
 										echo "Please run this script with sudo: sudo $0"
 										exit 1
 									fi
-									
+
+
 									if command -v "$tool_name" &>/dev/null; then
 										echo "The Tool $tool_name is already installed."
 									else
 										echo "Installing $tool_name..."
-										apt-get install python3 -y &>/dev/null
-										git clone https://github.com/BullsEye0/shodan-eye.git "$script_dir/shodan-eye" &>/dev/null
-										cd "$script_dir/shodan-eye"
-										python3 -m pip install -r requirements.txt &>/dev/null
-										alias shodaneye='python3 $script_dir/shodan-eye/shodan-eye.py'
+										git clone https://github.com/BullsEye0/shodan-eye.git &>/dev/null
+										cd "$script_dir/shodan-eye/"
 										chmod +x shodan-eye.py
-										ln -sf "$script_dir/shodan-eye/shodan-eye.py" "/usr/local/bin/shodaneye"
-										echo " ------> $tool_name is available, run it by typing: shodaneye"
-										cd "$script_dir"
+										sudo ln -s "$script_dir/shodan-eye/shodan-eye.py" /usr/local/bin/shodaneye 
+										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+										cd "$script_dir"  # Vuelve al directorio original después de la instalación
 									fi
 								}
+
+								# Uso de la función
 								check_and_install_shodaneye
-								;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
 							"Back")
 								break
 								;;
