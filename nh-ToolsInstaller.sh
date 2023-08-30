@@ -35,7 +35,7 @@ show_table2() {
     echo " |  > Maltego          (Osint)         |                               |"
     echo " |  > Villain          (C2)            |                               |"
     echo " |  > SIGIT            (Osint)         |                               |"
-    echo " |  > Cam-Hackers      (IP-Cam)        |                               |"
+    echo " |  > Shodan-eye       (Dorking)       |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
