@@ -491,33 +491,28 @@ main_menu() {
 								;;
 							"Cam-Hackers")
 								function check_and_install_camhackers() {
-									local tool_name="camhackers"
-									local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
-
-										if [ "$EUID" -ne 0 ]; then
-										echo "Please run this script with sudo: sudo $0"
-										exit 1
-									fi
-
-
-									if command -v "$tool_name" &>/dev/null; then
-										echo "The Tool $tool_name is already installed."
-									else
-										echo "Installing $tool_name..."
-										apt-get install python3  -y &>/dev/null
-										git clone https://github.com/AngelSecurityTeam/Cam-Hackers.git "$script_dir/Cam-Hackers" &>/dev/null
-										cd "$script_dir/Cam-Hackers"
-										sudo python3 -m pip install -r requirements.txt &>/dev/null
-	  									sudo chmod +x cam-hackers.py
-	    									alias camhackers='python3 $script_dir/Cam-Hackers/cam-hackers.py'
-
-										ln -sf "$script_dir/Cam-Hackers/cam-hackers.py" /usr/local/bin/camhackers
-										echo " ------> $tool_name is available, run it by typing: camhackers"
-										cd "$script_dir"
-									fi
+									    local tool_name="camhackers"
+									    local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+									
+									    if [ "$EUID" -ne 0 ]; then
+									        echo "Please run this script with sudo: sudo $0"
+									        exit 1
+									    fi
+									
+									    if command -v "$tool_name" &>/dev/null; then
+									        echo "The Tool $tool_name is already installed."
+									    else
+									        echo "Installing $tool_name..."
+									        apt-get install python3  -y &>/dev/null
+									        git clone https://github.com/AngelSecurityTeam/Cam-Hackers.git "$script_dir/Cam-Hackers" &>/dev/null
+									        cd "$script_dir/Cam-Hackers" || exit
+									        python3 -m pip install -r requirements.txt &>/dev/null
+									        ln -sf "$script_dir/Cam-Hackers/cam-hackers.py" "/usr/local/bin/$tool_name"
+									        echo " ------> $tool_name is available, run it by typing: $tool_name"
+									        cd "$script_dir" || exit
+									    fi
 								}
-
-								# Uso de la función
+								
 								check_and_install_camhackers
 								;;
 							"Back")
