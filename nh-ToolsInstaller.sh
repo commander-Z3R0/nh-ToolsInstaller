@@ -422,7 +422,7 @@ main_menu() {
                 show_table2
                 PS3="Select a tool to install: "
 				
-				opciones=("Maltego" "Villain" "Sigit" "Cam-Hackers" "Back")
+				opciones=("Maltego" "Villain" "Sigit" "Shodan-eye" "Back")
 				
 				select opt in "${opciones[@]}"; do
 						case $opt in
@@ -489,9 +489,9 @@ main_menu() {
 								# Uso de la función
 								check_and_install_sigit
 								;;
-							"Cam-Hackers")
-								function check_and_install_camhackers() {
-									    local tool_name="camhackers"
+							"Shodan-eye")
+								function check_and_install_shodaneye() {
+									    local tool_name="shodaneye"
 									    local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 									
 									    if [ "$EUID" -ne 0 ]; then
@@ -504,16 +504,17 @@ main_menu() {
 									    else
 									        echo "Installing $tool_name..."
 									        apt-get install python3  -y &>/dev/null
-									        git clone https://github.com/AngelSecurityTeam/Cam-Hackers.git "$script_dir/Cam-Hackers" &>/dev/null
-									        cd "$script_dir/Cam-Hackers" || exit
+									        git clone https://github.com/BullsEye0/shodan-eye.git "$script_dir/shodan-eye" &>/dev/null
+									        cd "$script_dir/shodan-eye" 
 									        python3 -m pip install -r requirements.txt &>/dev/null
-									        ln -sf "$script_dir/Cam-Hackers/cam-hackers.py" "/usr/local/bin/$tool_name"
+		 								alias shodaneye='python3 shodan-eye.py'
+									        ln -sf "$script_dir/shodan-eye/shodan-eye.py" "/usr/local/bin/shodaneye"
 									        echo " ------> $tool_name is available, run it by typing: $tool_name"
-									        cd "$script_dir" || exit
+									        cd "$script_dir" 
 									    fi
 								}
 								
-								check_and_install_camhackers
+								check_and_install_shodaneye
 								;;
 							"Back")
 								break
