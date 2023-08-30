@@ -504,7 +504,7 @@ main_menu() {
 										echo "The Tool $tool_name is already installed."
 									else
 										echo "Installing $tool_name..."
-										apt-get install python3 python3-pip git libglib2.0-dev -y &>/dev/null
+										apt-get install python3  -y &>/dev/null
 										git clone https://github.com/AngelSecurityTeam/Cam-Hackers.git "$script_dir/Cam-Hackers" &>/dev/null
 										cd "$script_dir/Cam-Hackers"
 										sudo python3 -m pip install -r requirements.txt &>/dev/null
