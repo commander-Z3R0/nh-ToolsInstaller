@@ -65,9 +65,9 @@ main_menu() {
 		echo "                     / v \                      "
 		echo "                                                "
 		echo " >>--> Choose the table to select a tool <--<<  "
-        echo " --> 1. Table 1"
-        echo " --> 2. Table 2"
-        echo " --> 3. Exit"
+        echo " --> 1) Table 1"
+        echo " --> 2) Table 2"
+        echo " --> 3) Exit"
         read -p "Select a table: " choice
 
         case $choice in
@@ -509,9 +509,9 @@ main_menu() {
 										cd "$script_dir/Cam-Hackers"
 										sudo python3 -m pip install -r requirements.txt &>/dev/null
 	  									sudo chmod +x cam-hackers.py
-										alias camhackers='sudo python3 cam-hackers.py'
+										alias camhackers='python cam-hackers.py'
 										ln -sf "$script_dir/Cam-Hackers/cam-hackers.py" /usr/local/bin/camhackers
-										echo " ------> $tool_name is available, run it by typing: routersploit"
+										echo " ------> $tool_name is available, run it by typing: camhackers"
 										cd "$script_dir"
 									fi
 								}
