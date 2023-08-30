@@ -491,7 +491,7 @@ main_menu() {
 								;;
 							"Shodan-eye")
 								function check_and_install_shodaneye() {
-									local tool_name="shodan-eye"
+									local tool_name="shodaneye"
 									local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 									if [ "$EUID" -ne 0 ]; then
 										echo "Please run this script with sudo: sudo $0"
@@ -506,7 +506,7 @@ main_menu() {
 										git clone https://github.com/BullsEye0/shodan-eye.git "$script_dir/shodan-eye" &>/dev/null
 										cd "$script_dir/shodan-eye"
 										python3 -m pip install -r requirements.txt &>/dev/null
-										alias shodaneye='python3 shodan-eye.py'
+										alias shodaneye='python3 $script_dir/shodan-eye/shodan-eye.py'
 										chmod +x shodan-eye.py
 										ln -sf "$script_dir/shodan-eye/shodan-eye.py" "/usr/local/bin/shodaneye"
 										echo " ------> $tool_name is available, run it by typing: shodaneye"
