@@ -507,6 +507,7 @@ main_menu() {
 										git clone https://github.com/BullsEye0/shodan-eye.git &>/dev/null
 										cd "$script_dir/shodan-eye/"
 										chmod +x shodan-eye.py
+	  									pip3 install -r requirements.txt
 										sudo ln -s "$script_dir/shodan-eye/shodan-eye.py" /usr/local/bin/shodaneye 
 										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
 										cd "$script_dir"  # Vuelve al directorio original después de la instalación
