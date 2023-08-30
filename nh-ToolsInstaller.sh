@@ -508,6 +508,7 @@ main_menu() {
 									        cd "$script_dir/shodan-eye" 
 									        python3 -m pip install -r requirements.txt &>/dev/null
 		 								alias shodaneye='python3 shodan-eye.py'
+	   									sudo chmod +x shodan-eye.py
 									        ln -sf "$script_dir/shodan-eye/shodan-eye.py" "/usr/local/bin/shodaneye"
 									        echo " ------> $tool_name is available, run it by typing: $tool_name"
 									        cd "$script_dir" 
