@@ -422,7 +422,7 @@ main_menu() {
                 show_table2
                 PS3="Select a tool to install: "
 				
-				opciones=("Maltego" "Villain" "Sigit" "Shodan-eye" "Back")
+				opciones=("Maltego" "Villain" "Sigit" "Back")
 				
 				select opt in "${opciones[@]}"; do
 						case $opt in
