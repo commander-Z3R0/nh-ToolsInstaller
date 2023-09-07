@@ -35,7 +35,7 @@ show_table2() {
     echo " |  > Maltego          (Osint)         |                               |"
     echo " |  > Villain          (C2)            |                               |"
     echo " |  > SIGIT            (Osint)         |                               |"
-    echo " |  > Shodan-eye       (Dorking)       |                               |"
+    echo " |                                     |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
@@ -488,34 +488,6 @@ main_menu() {
 
 								# Uso de la función
 								check_and_install_sigit
-								;;
-							"Shodan-eye")
-								function check_and_install_shodaneye() {
-									local tool_name="shodaneye"
-									local script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # Ruta del script actual
-
-									if [ "$EUID" -ne 0 ]; then
-										echo "Please run this script with sudo: sudo $0"
-										exit 1
-									fi
-
-
-									if command -v "$tool_name" &>/dev/null; then
-										echo "The Tool $tool_name is already installed."
-									else
-										echo "Installing $tool_name..."
-										git clone https://github.com/BullsEye0/shodan-eye.git &>/dev/null
-										cd "$script_dir/shodan-eye/"
-										chmod +x shodan-eye.py
-	  									pip3 install -r requirements.txt
-										sudo ln -s "$script_dir/shodan-eye/shodan-eye.py" /usr/local/bin/shodaneye 
-										echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
-										cd "$script_dir"  # Vuelve al directorio original después de la instalación
-									fi
-								}
-
-								# Uso de la función
-								check_and_install_shodaneye
 								;;
 							"Back")
 								break
