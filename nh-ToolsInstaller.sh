@@ -35,7 +35,7 @@ show_table2() {
     echo " |  > Maltego          (Osint)         |                               |"
     echo " |  > Villain          (C2)            |                               |"
     echo " |  > SIGIT            (Osint)         |                               |"
-    echo " |                                     |                               |"
+    echo " |  > Gobuster         (Fuzzer)        |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
     echo " |                                     |                               |"
@@ -422,7 +422,7 @@ main_menu() {
                 show_table2
                 PS3="Select a tool to install: "
 				
-				opciones=("Maltego" "Villain" "Sigit" "Back")
+				opciones=("Maltego" "Villain" "Sigit" "Gobuster" "Back")
 				
 				select opt in "${opciones[@]}"; do
 						case $opt in
