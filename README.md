@@ -35,7 +35,7 @@ This script was created in order to facilitate the installation of kali nethunte
   |  > Maltego          (Osint)         |                               |
   |  > Villain          (C2)            |                               |
   |  > SIGIT            (Osint)         |                               |
-  |                                     |                               |
+  |  > Gobuster         (Fuzzer)        |                               |
   |                                     |                               |
   |                                     |                               |
   |                                     |                               |
