@@ -489,6 +489,27 @@ main_menu() {
 								# Uso de la función
 								check_and_install_sigit
 								;;
+							"Gobuster")
+                                 				function check_and_install_gobuster() {
+                                     					local tool_name="gobuster"
+                                     					if [ "$EUID" -ne 0 ]; then
+                                         					echo "Please run this script with Privileges: sudo $0"
+                                         					exit 1
+                                     					fi
+
+                                     					if command -v "$tool_name" &>/dev/null; then
+                                         					echo "The Tool $tool_name is already installed."
+                                     					else
+                                         					echo "Installing $tool_name..."
+                                         					sudo apt-get update -y &>/dev/null
+                                         					sudo apt-get install gobuster -y &>/dev/null
+                                         					echo " ------> $tool_name is available, run it by typing: sudo $tool_name "
+                                     					fi
+                                 				}
+
+                                 				# Uso de la función
+                                 				check_and_install_gobuster
+                                 				;;
 							"Back")
 								break
 								;;
