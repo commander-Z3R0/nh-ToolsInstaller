@@ -1,5 +1,5 @@
 # Nethunter Tools Installer
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/command-z3r0?tab=repositories) 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/commander-z3r0?tab=repositories) 
 
 [Version: 2.0]
 
