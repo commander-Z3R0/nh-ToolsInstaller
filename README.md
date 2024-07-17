@@ -84,7 +84,7 @@ This script was created in order to facilitate the installation of kali nethunte
 |---------------------------------------------------------------------|
 |  > GDB                              |                               |
 |  > Objdump                          |                               |
-|  >                                  |                               |
+|                                     |                               |
 |                                     |                               |
 |                                     |                               |
 |                                     |                               |
@@ -99,9 +99,9 @@ This script was created in order to facilitate the installation of kali nethunte
 |---------------------------------------------------------------------|
 |                     >>~~~>Packages to install<~~~<<                 |
 |---------------------------------------------------------------------|
-|  >                                  |                               |
-|  >                                  |                               |
-|  >                                  |                               |
+|                                     |                               |
+|                                     |                               |
+|                                     |                               |
 |                                     |                               |
 |                                     |                               |
 |                                     |                               |
@@ -118,7 +118,7 @@ This script was created in order to facilitate the installation of kali nethunte
 |---------------------------------------------------------------------|
 |  > Hydra                            |                               |
 |  > John                             |                               |
-|  >                                  |                               |
+|                                     |                               |
 |                                     |                               |
 |                                     |                               |
 |                                     |                               |
@@ -135,7 +135,7 @@ This script was created in order to facilitate the installation of kali nethunte
 |---------------------------------------------------------------------|
 |  > ExploitDB                        |                               |
 |  > Netcat                           |                               |
-|  >                                  |                               |
+|                                     |                               |
 |                                     |                               |
 |                                     |                               |
 |                                     |                               |
