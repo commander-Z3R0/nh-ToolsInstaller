@@ -5,6 +5,30 @@
 
 This script was created in order to facilitate the installation of kali nethunter compatible tools (Rootless,Lite,Rooted). Each update will bring improvements, more tools and bug fixes.
 
+
+## Tested on :
+
+ :heavy_check_mark: Kali nethunter
+
+ 
+ :heavy_check_mark: Kali linux
+
+
+ :heavy_check_mark: Debian
+
+
+## Clone the repository
+```shell
+git clone https://github.com/command-Z3R0/nh-ToolsInstaller.git
+cd nh-ToolsInstaller
+chmod +x nh-ToolsInstaller.sh
+```
+## Execute tool
+```shell
+sudo bash nh-ToolsInstaller.sh
+```
+
+
 ## List of tools:
 ```sh
 |---------------------------------------------------------------------|
@@ -158,28 +182,6 @@ This script was created in order to facilitate the installation of kali nethunte
 |                                     |                               |
 |                                     |                               |
 |---------------------------------------------------------------------|
-```
-
-## Tested on :
-
- :heavy_check_mark: Kali nethunter
-
- 
- :heavy_check_mark: Kali linux
-
-
- :heavy_check_mark: Debian
-
-
-## Clone the repository
-```shell
-git clone https://github.com/command-Z3R0/nh-ToolsInstaller.git
-cd nh-ToolsInstaller
-chmod +x nh-ToolsInstaller.sh
-```
-## Execute tool
-```shell
-sudo bash nh-ToolsInstaller.sh
 ```
 
 -----------------------------------------------------------------------------------------------------
